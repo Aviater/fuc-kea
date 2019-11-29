@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.project.fuc.kea;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class FucApplicationTests {
 
     @Test
     void contextLoads() {

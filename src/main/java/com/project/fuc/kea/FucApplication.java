@@ -1,13 +1,13 @@
-package com.example.demo;
+package com.project.fuc.kea;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class FucApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(FucApplication.class, args);
     }
 
 }

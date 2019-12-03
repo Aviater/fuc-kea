@@ -1,0 +1,23 @@
+
+main {
+    background-image:url(../img/foosball1.jpg);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: right 50%;
+    z-index: -1;
+}
+
+form {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}

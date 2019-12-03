@@ -94,5 +94,21 @@ public class UserRepository {
         jdbc.update(psc);
         return user;
     }
-    }
 
+    /*  //find user by id and password *log in*
+    public User login(String name, String password) {
+
+        SqlRowSet rs = jdbc.queryForRowSet("SELECT * FROM user WHERE name= " + name +  "AND password= " + password);
+        User userLogged = new User();
+
+        while(rs.next()) {
+            userLogged.setUserId(rs.getInt("user_id"));
+            userLogged.setUserName(rs.getString("name"));
+            userLogged.setEmail(rs.getString("email"));
+            userLogged.setPassword(rs.getString("password"));
+
+        }
+
+        return userLogged;
+    }*/
+    }

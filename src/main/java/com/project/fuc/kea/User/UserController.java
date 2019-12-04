@@ -30,6 +30,7 @@ public class UserController {
     @GetMapping("/registeruser")
     public String addUser(Model model){
         model.addAttribute("userform",new User());
+
         return "register";
     }
 
@@ -38,6 +39,7 @@ public class UserController {
     public String saveUser(@ModelAttribute User user){
         userRepo.insert(user);
         return "landing";
+
     }
 
     @GetMapping("/edituser/{user_id}")

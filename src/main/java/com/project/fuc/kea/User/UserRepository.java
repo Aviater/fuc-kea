@@ -36,6 +36,7 @@ public class UserRepository {
     }
 
     //find user by id
+
     public User findUser(int userId) {
 
         SqlRowSet rs = jdbc.queryForRowSet("SELECT * FROM user WHERE user_id= " + userId);
@@ -48,10 +49,12 @@ public class UserRepository {
             user.setPassword(rs.getString("password"));
 
         }
+
         return user;
     }
 
   //update user
+
     public User update(User user) {
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
@@ -62,6 +65,7 @@ public class UserRepository {
                 ps.setString(3,user.getPassword());
 
                 return ps;
+
             }
 
         };
@@ -73,13 +77,16 @@ public class UserRepository {
     }
 
     //insert new user in the database
+
     public User insert(User user) {
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement
                         ("INSERT INTO user(name,email,password) VALUES(?,?,?)");
+
                 ps.setString(1, user.getName());
+
                 ps.setString(2, user.getEmail());
                 ps.setString(3, user.getPassword());
 
@@ -90,9 +97,29 @@ public class UserRepository {
         return user;
     }
 
+
 //    public User login(String email, String password){
 //
 //
 //    }
 }
+
+
+    /*  //find user by id and password *log in*
+    public User login(String name, String password) {
+
+        SqlRowSet rs = jdbc.queryForRowSet("SELECT * FROM user WHERE name= " + name +  "AND password= " + password);
+        User userLogged = new User();
+
+        while(rs.next()) {
+            userLogged.setUserId(rs.getInt("user_id"));
+            userLogged.setUserName(rs.getString("name"));
+            userLogged.setEmail(rs.getString("email"));
+            userLogged.setPassword(rs.getString("password"));
+
+        }
+
+        return userLogged;
+    }*/
+    }
 

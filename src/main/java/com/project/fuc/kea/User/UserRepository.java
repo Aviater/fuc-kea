@@ -42,7 +42,7 @@ public class UserRepository {
         SqlRowSet rs = jdbc.queryForRowSet("SELECT * FROM user WHERE user_id= " + userId);
         User user = new User();
 
-        while(rs.next()) {
+        while (rs.next()) {
             user.setUserId(rs.getInt("user_id"));
             user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
@@ -53,16 +53,16 @@ public class UserRepository {
         return user;
     }
 
-  //update user
+    //update user
 
     public User update(User user) {
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement("UPDATE user " + "SET name= ?, email= ?, password= ? " + "WHERE user_id= " + user.getUserId());
-                ps.setString(1,user.getName());
-                ps.setString(2,user.getEmail());
-                ps.setString(3,user.getPassword());
+                ps.setString(1, user.getName());
+                ps.setString(2, user.getEmail());
+                ps.setString(3, user.getPassword());
 
                 return ps;
 
@@ -102,7 +102,7 @@ public class UserRepository {
 //
 //
 //    }
-}
+
 
 
     /*  //find user by id and password *log in*
@@ -121,5 +121,4 @@ public class UserRepository {
 
         return userLogged;
     }*/
-    }
-
+}

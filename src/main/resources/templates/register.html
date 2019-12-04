@@ -11,32 +11,32 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">F.U.C.</a>
+        <a class="navbar-brand" href="/">F.U.C.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.html">Login</a>
-            <a class="nav-item nav-link active" href="register.html">Register<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/">Login</a>
+            <a class="nav-item nav-link active" href="registeruser">Register<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#" tabindex="-1" aria-disabled="true">About</a>
             </div>
         </div>
     </nav>
     
     <main>
-        <form>
+        <form id="form" th:action="@{'/saveuser'}" method="post" th:object="${userform}">
             <div class="form-group">
-                <label for="exampleInputEmail1">Full Name</label>
-                <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe">
+                <label for="name">Full Name</label>
+                <input required type="text" class="form-control" th:field="${userform.name}" id="name" aria-describedby="emailHelp" placeholder="John Doe">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="john.doe@mail.com">
+                <label for="email">Email address</label>
+                <input required type="email" class="form-control" th:field="${userform.email}" id="email" aria-describedby="emailHelp" placeholder="john.doe@mail.com">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+                <label for="password">Password</label>
+                <input required type="password" class="form-control" th:field="${userform.password}" id="password" placeholder="Enter Password">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

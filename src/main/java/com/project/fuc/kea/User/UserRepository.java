@@ -26,7 +26,7 @@ public class UserRepository {
         while (rs.next()) {
             User user = new User();
             user.setUserId(rs.getInt("user_id"));
-            user.setUserName(rs.getString("name"));
+            user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
             user.setPassword(rs.getString("password"));
 
@@ -36,7 +36,6 @@ public class UserRepository {
     }
 
     //find user by id
-
     public User findUser(int userId) {
 
         SqlRowSet rs = jdbc.queryForRowSet("SELECT * FROM user WHERE user_id= " + userId);
@@ -44,17 +43,15 @@ public class UserRepository {
 
         while(rs.next()) {
             user.setUserId(rs.getInt("user_id"));
-            user.setUserName(rs.getString("name"));
+            user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
             user.setPassword(rs.getString("password"));
 
         }
-
         return user;
     }
 
   //update user
-
     public User update(User user) {
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
@@ -65,7 +62,6 @@ public class UserRepository {
                 ps.setString(3,user.getPassword());
 
                 return ps;
-
             }
 
         };
@@ -77,14 +73,13 @@ public class UserRepository {
     }
 
     //insert new user in the database
-
     public User insert(User user) {
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement
                         ("INSERT INTO user(name,email,password) VALUES(?,?,?)");
-                ps.setString(1, user.getUserName());
+                ps.setString(1, user.getName());
                 ps.setString(2, user.getEmail());
                 ps.setString(3, user.getPassword());
 
@@ -94,5 +89,10 @@ public class UserRepository {
         jdbc.update(psc);
         return user;
     }
-    }
+
+//    public User login(String email, String password){
+//
+//
+//    }
+}
 

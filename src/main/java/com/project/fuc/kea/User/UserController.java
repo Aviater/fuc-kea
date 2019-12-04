@@ -30,14 +30,16 @@ public class UserController {
     @GetMapping("/registeruser")
     public String addUser(Model model){
         model.addAttribute("userform",new User());
-        return "register-user";
+
+        return "register";
     }
 
     //needs another redirect
     @PostMapping("/saveuser")
     public String saveUser(@ModelAttribute User user){
         userRepo.insert(user);
-        return "redirect:/users";
+        return "landing";
+
     }
 
     @GetMapping("/edituser/{user_id}")

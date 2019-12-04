@@ -26,7 +26,7 @@ public class UserRepository {
         while (rs.next()) {
             User user = new User();
             user.setUserId(rs.getInt("user_id"));
-            user.setUserName(rs.getString("name"));
+            user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
             user.setPassword(rs.getString("password"));
 
@@ -44,7 +44,7 @@ public class UserRepository {
 
         while(rs.next()) {
             user.setUserId(rs.getInt("user_id"));
-            user.setUserName(rs.getString("name"));
+            user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
             user.setPassword(rs.getString("password"));
 
@@ -84,7 +84,9 @@ public class UserRepository {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement
                         ("INSERT INTO user(name,email,password) VALUES(?,?,?)");
-                ps.setString(1, user.getUserName());
+
+                ps.setString(1, user.getName());
+
                 ps.setString(2, user.getEmail());
                 ps.setString(3, user.getPassword());
 
@@ -94,6 +96,14 @@ public class UserRepository {
         jdbc.update(psc);
         return user;
     }
+
+
+//    public User login(String email, String password){
+//
+//
+//    }
+}
+
 
     /*  //find user by id and password *log in*
     public User login(String name, String password) {
@@ -112,3 +122,4 @@ public class UserRepository {
         return userLogged;
     }*/
     }
+

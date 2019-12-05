@@ -24,17 +24,17 @@ public class GameController {
             return "games-played";
         }
 
-        @GetMapping("/add-game")
+        @GetMapping("/registergame")
         public String addGame(Model m)
         {
-            m.addAttribute("newGame", new Game());
+            m.addAttribute("gameform", new Game());
             return "add-game";
         }
 
-        @PostMapping("/add-game/save")
+        @PostMapping("/savegame")
         public String saveGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
-        {
-            return "redirect:/";
+        {   gameRepo.insertGame(game);
+            return "landing";
         }
 
         @GetMapping("/edit-game/{id}")

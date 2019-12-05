@@ -6,7 +6,7 @@
 
     <title>Hello FUC KEA</title>
 
-    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -17,21 +17,28 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/">Login</a>
-            <a class="nav-item nav-link active" href="registeruser">Register</a>
-            <a class="nav-item nav-link" href="/about-us" tabindex="-1" aria-disabled="true">About<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="/registergame">New Match<span class="sr-only">(current)</span></a>
         </div>
     </div>
 </nav>
 
 <main>
-    <h2 class="h1-responsive font-weight-bold text-center my-4">About us</h2>
-    <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">Well, it's all about the nice user experience. And a piece of great fun. Our web application is striving to deliver them both to you.
 
-        Based in Denmark, we are launching a system capable of recording various statistics of Foosball matches as well as the introduction of bets to fuel would-be ludomaniacs across the country.
-
-    </p>
+    <form id="form" th:action="@{'/savegame'}" method="post" th:object="${gameform}">
+        <div class="form-group">
+            <label for="winner">Winner Name</label>
+            <input required type="text" class="form-control" th:field="${gameform.winner}" id="winner" aria-describedby="emailHelp" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+            <label for="type">Game Type</label>
+            <input required type="text" class="form-control" th:field="${gameform.type}" id="type" aria-describedby="emailHelp" placeholder="single">
+        </div>
+        <div class="form-group">
+            <label for="duration">Game Duration</label>
+            <input required type="text" class="form-control" th:field="${gameform.duration}" id="duration" placeholder="Enter duration">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -39,4 +46,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-

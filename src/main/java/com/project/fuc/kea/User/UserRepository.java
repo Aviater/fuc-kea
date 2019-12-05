@@ -29,9 +29,7 @@ public class UserRepository {
             user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
             user.setPassword(rs.getString("password"));
-
         }
-
         return userList;
     }
 
@@ -47,9 +45,7 @@ public class UserRepository {
             user.setName(rs.getString("name"));
             user.setEmail(rs.getString("email"));
             user.setPassword(rs.getString("password"));
-
         }
-
         return user;
     }
 
@@ -63,17 +59,11 @@ public class UserRepository {
                 ps.setString(1, user.getName());
                 ps.setString(2, user.getEmail());
                 ps.setString(3, user.getPassword());
-
                 return ps;
-
             }
-
         };
-
         jdbc.update(psc);
         return user;
-
-
     }
 
     //insert new user in the database
@@ -86,10 +76,8 @@ public class UserRepository {
                         ("INSERT INTO user(name,email,password) VALUES(?,?,?)");
 
                 ps.setString(1, user.getName());
-
                 ps.setString(2, user.getEmail());
                 ps.setString(3, user.getPassword());
-
                 return ps;
             }
         };
@@ -97,6 +85,8 @@ public class UserRepository {
         return user;
     }
 
+
+}
 
 //    public User login(String email, String password){
 //
@@ -121,4 +111,4 @@ public class UserRepository {
 
         return userLogged;
     }*/
-}
+

@@ -19,27 +19,19 @@
             <div class="navbar-nav">
             <a class="nav-item nav-link" href="/">Login</a>
             <a class="nav-item nav-link active" href="registeruser">Register<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="about-us" tabindex="-1" aria-disabled="true">About</a>
+            <a class="nav-item nav-link" href="about" tabindex="-1" aria-disabled="true">About</a>
             </div>
         </div>
     </nav>
     
     <main>
-        <form id="form" th:action="@{'/saveuser'}" method="post" th:object="${userform}">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input required type="text" class="form-control" th:field="${userform.name}" id="name" aria-describedby="emailHelp" placeholder="John Doe">
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input required type="email" class="form-control" th:field="${userform.email}" id="email" aria-describedby="emailHelp" placeholder="john.doe@mail.com">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input required type="password" class="form-control" th:field="${userform.password}" id="password" placeholder="Enter Password">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <h2 class="h1-responsive font-weight-bold text-center my-4">About us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">Well, it's all about the nice user experience. And a piece of great fun. Our web application is striving to deliver them both to you.
+
+            Based in Denmark, we are launching a system capable of recording various statistics of Foosball matches as well as the introduction of bets to fuel would-be ludomaniacs across the country.
+
+        </p>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

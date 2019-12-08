@@ -64,10 +64,11 @@ public class GameRepository {
 
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("INSERT INTO game values(null, ?, ?, ?)");
+                PreparedStatement ps = connection.prepareStatement("INSERT INTO game values(null, ?, ?, ?,?)");
                 ps.setString(1, game.getWinner());
                 ps.setString(2, game.getType());
                 ps.setInt(3, game.getDuration());
+                ps.setInt(4, game.getPoints());
                 return ps;
             }
         };
@@ -83,6 +84,7 @@ public class GameRepository {
                 ps.setString(1, game.getWinner());
                 ps.setString(2, game.getType());
                 ps.setInt(3, game.getDuration());
+                ps.setInt(4, game.getPoints());
                 return ps;
             }
         };
@@ -94,6 +96,7 @@ public class GameRepository {
         game.setWinner(rs.getString("winner"));
         game.setType(rs.getString("type"));
         game.setDuration(rs.getInt("duration"));
+        game.setPoints(rs.getInt("points"));
     }
 
     private List<Game> getGamePlayedList(List<Game> gameList, SqlRowSet rs) {

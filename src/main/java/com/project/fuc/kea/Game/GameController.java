@@ -37,7 +37,7 @@ public class GameController {
             return "landing";
         }
 
-        @GetMapping("/edit-game/{id}")
+/*        @GetMapping("/edit-game/{id}")
         public String editGame(@PathVariable("id") int id, Model model)
         {
             Game game  = gameRepo.findGame(id);
@@ -49,6 +49,6 @@ public class GameController {
         public String saveEditedGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
         {
             return "redirect:/game-saved";
-        }
+        }*/
     }
 

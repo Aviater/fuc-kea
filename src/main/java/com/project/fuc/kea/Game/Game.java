@@ -9,13 +9,7 @@ public class Game {
     private int points;
 
 
-    public Game(int game_id, String winner, String type, int duration, int points) {
-        this.game_id = game_id;
-        this.winner = winner;
-        this.type = type;
-        this.duration = duration;
-        this.points = points;
-    }
+    public Game(){}
 
     public int getGame_id() {
         return game_id;

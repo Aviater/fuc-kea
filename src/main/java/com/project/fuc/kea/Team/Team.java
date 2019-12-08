@@ -1,11 +1,25 @@
 package com.project.fuc.kea.Team;
 
+import com.project.fuc.kea.Game.Game;
+import com.project.fuc.kea.User.User;
+
+import java.util.List;
+
 public class Team {
     private int team_id;
-    private int player1_id;
-    private int player2_id;
-    private int points;
-    private int game_id;
+    private String name;
+    private List <User> players;
+    private Game game;
+   // private boolean isWinner;
+
+
+
+    public Team(int team_id, String name, List<User> players, Game game) {
+        this.team_id = team_id;
+        this.name = name;
+        this.players = players;
+        this.game = game;
+    }
 
     public int getTeam_id() {
         return team_id;
@@ -14,31 +28,27 @@ public class Team {
         this.team_id = team_id;
     }
 
-    public int getPlayer1_id() {
-        return player1_id;
-    }
-    public void setPlayer1_id(int player1_id) {
-        this.player1_id = player1_id;
+    public String getName() {
+        return name;
     }
 
-    public int getPlayer2_id() {
-        return player2_id;
-    }
-    public void setPlayer2_id(int player2_id) {
-        this.player2_id = player2_id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getPoints() {
-        return points;
-    }
-    public void setPoints(int points) {
-        this.points = points;
+    public Game getGame() {
+        return game;
     }
 
-    public int getGame_id() {
-        return game_id;
+    public void setGame(Game game) {
+        this.game = game;
     }
-    public void setGame_id(int game_id) {
-        this.game_id = game_id;
+
+    public List<User> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<User> players) {
+        this.players = players;
     }
 }

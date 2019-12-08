@@ -6,8 +6,16 @@ public class Game {
     private String winner;
     private String type;
     private int duration;
+    private int points;
 
-    public Game() {}
+
+    public Game(int game_id, String winner, String type, int duration, int points) {
+        this.game_id = game_id;
+        this.winner = winner;
+        this.type = type;
+        this.duration = duration;
+        this.points = points;
+    }
 
     public int getGame_id() {
         return game_id;
@@ -40,4 +48,11 @@ public class Game {
         this.duration = duration;
     }
 
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
 }

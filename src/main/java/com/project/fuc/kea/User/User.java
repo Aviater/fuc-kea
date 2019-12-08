@@ -3,21 +3,24 @@ package com.project.fuc.kea.User;
 public class User {
     private int userId;
     private String name;
-   // private String userName;
+    // private String userName;
     private String email;
     private String password;
 
-    public User(){}
-    public User(String email, String password){
-        this.email=email;
-        this.password=password;
+    public User() {
+    }
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
     public int getUserId() {
         return userId;
     }
-    public void setUserId(int userId){
-        this.userId=userId;
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getName() {

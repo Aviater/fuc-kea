@@ -56,16 +56,25 @@ public class UserController {
     }
 
 
-    @RequestMapping(value="/login", method=RequestMethod.GET)
+    @RequestMapping(value = "login", method = RequestMethod.POST)
     public String login(
             @RequestParam(value = "email", required = true) String email,
-            @RequestParam(value = "password", required = true) String password) {
+            @RequestParam(value = "password", required = true) String password
+//           @RequestBody String password
+            // Model model,@ModelAttribute("user") User login
+    ) {
+        // User login=new User();
+
+        //model.addAttribute("email",login.getEmail());
+        //model.addAttribute("password", login.getPassword());
         for (User user : userRepo.findAllUsers()) {
             if (user.getEmail().equals(email) &&
                     user.getPassword().equals(password)) {
                 return "landing";
+
             }
         }
         return "index";
     }
+
 }

@@ -3,7 +3,6 @@ package com.project.fuc.kea.User;
 public class User {
     private int userId;
     private String name;
-    // private String userName;
     private String email;
     private String password;
 
@@ -24,23 +23,15 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-//    public String getUserName() {
-//        return userName;
-//    }
-//
-//    public void setUserName(String userName) {
-//        this.userName = userName;
-//    }
-
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -52,6 +43,6 @@ public class User {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 }

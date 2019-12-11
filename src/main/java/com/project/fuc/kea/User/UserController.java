@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class UserController {
@@ -55,26 +56,19 @@ public class UserController {
         return "redirect:/users";
     }
 
-
-    @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String login(
-            @RequestParam(value = "email", required = true) String email,
-            @RequestParam(value = "password", required = true) String password
-//           @RequestBody String password
-            // Model model,@ModelAttribute("user") User login
-    ) {
-        // User login=new User();
-
-        //model.addAttribute("email",login.getEmail());
-        //model.addAttribute("password", login.getPassword());
+    @RequestMapping(value ={"/login"}, method = RequestMethod.POST)
+    public String userlogin(
+           @RequestParam Map<String,String> reqPar) {
+        String email=reqPar.get("email");
+        String password=reqPar.get("password");
         for (User user : userRepo.findAllUsers()) {
-            if (user.getEmail().equals(email) &&
-                    user.getPassword().equals(password)) {
-                return "landing";
-
+            if (user.getEmail().equals(email)){
+                if(user.getPassword().equals(password)){
+                    return "landing";
+                }
             }
         }
-        return "index";
+        return "redirect:/";
     }
 
 }

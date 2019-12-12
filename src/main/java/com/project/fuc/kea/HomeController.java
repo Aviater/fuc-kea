@@ -7,9 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
 
-    @GetMapping
-    public String index(){
+    @GetMapping("/")
+    public String index() {
         return "index";
     }
+
+    @GetMapping("/about-us")
+    public String showAboutUs() {
+        return "about";
+    }
+
 
 }

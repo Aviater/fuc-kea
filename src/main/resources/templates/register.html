@@ -19,8 +19,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/">Login <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="registeruser">Register</a>
+            <a class="nav-item nav-link" href="/">Login</a>
+            <a class="nav-item nav-link active" href="registeruser">Register<span class="sr-only">(current)</span></a>
 
             <a class="nav-item nav-link" href="about-us" tabindex="-1" aria-disabled="true">About</a>
             </div>
@@ -30,18 +30,23 @@
 </nav>
 
 <main>
-    <form action="/login" method="post" >
+    <form id="form" th:action="@{'/saveuser'}" method="post" th:object="${userform}">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input required type="text" class="form-control" th:field="${userform.name}" id="name"
+                   aria-describedby="emailHelp" placeholder="John Doe">
+        </div>
         <div class="form-group">
             <label for="email">Email address</label>
-            <input required type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp"
-                   placeholder="Enter email">
+            <input required type="email" class="form-control" th:field="${userform.email}" id="email"
+                   aria-describedby="emailHelp" placeholder="john.doe@mail.com">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input required type="password" name="password"  class="form-control" id="password"
+            <input required type="password" class="form-control" th:field="${userform.password}" id="password"
                    placeholder="Enter Password">
         </div>
-        <button type="submit"  class="btn btn-primary">Log in</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </main>
 

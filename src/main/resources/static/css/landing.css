@@ -1,0 +1,132 @@
+.img-wrap {
+    border: white solid 2px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wrapper {
+    height: calc(100vh - 56px);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.wrapper div {
+    position: absolute;
+    cursor: pointer;
+    height: 50%;
+    width: 50%;
+}
+
+.wrapper .img-wrap h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+.wrapper div:nth-of-type(1) {
+    left: 0;
+    top: 0;
+}
+
+.wrapper div:nth-of-type(2) {
+    top: 0;
+    right: 0;
+}
+
+.wrapper div:nth-of-type(3) {
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.wrapper div:nth-of-type(4) {
+    bottom: 0;
+    right: 0;
+}
+
+@media only screen and (min-width: 1600px) {
+    .wrapper img {
+        display: none;
+    }
+
+    .wrapper div {
+        height: 100%;
+        width: 25%;
+    }
+
+    .wrapper div:nth-of-type(1) {
+        background-image: url(../img/match.jpg);
+        top: 0;
+        left: 0;
+    }
+
+    .wrapper div:nth-of-type(2) {
+        background-image: url(../img/league.jpg);
+        top: 0;
+        left: 25%;
+    }
+
+    .wrapper div:nth-of-type(3) {
+        background-image: url(../img/ranking.jpg);
+        top: 0;
+        left: 50%;
+    }
+
+    .wrapper div:nth-of-type(4) {
+        background-image: url(../img/profile.jpg);
+        top: 0;
+        left: 75%;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .wrapper img {
+        display: none;
+    }
+
+    .wrapper div {
+        height: 25%;
+        width: 100%;
+    }
+
+    .wrapper div:nth-of-type(1) {
+        background-image: url(../img/match.jpg);
+        top: 0;
+        left: 0;
+    }
+
+    .wrapper div:nth-of-type(2) {
+        background-image: url(../img/league.jpg);
+        top: 25%;
+        left: 0;
+        background-position: 50% 85%;
+    }
+
+    .wrapper div:nth-of-type(3) {
+        background-image: url(../img/ranking.jpg);
+        top: 50%;
+        left: 0;
+    }
+
+    .wrapper div:nth-of-type(4) {
+        background-image: url(../img/profile.jpg);
+        top: 75%;
+        left: 0;
+        background-position: 50% bottom;
+    }
+}

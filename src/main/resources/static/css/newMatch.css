@@ -1,0 +1,66 @@
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('../img/background2.jpg');
+    background-position: right 50%;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.row .col-sm-6 {
+    height: calc(100vh - 56px);
+}
+
+.row .col-sm-6 img {
+    display: block;
+    height: calc(100vh - 56px);
+    width: auto;
+    padding: 20px 0;
+    right: 0;
+    position: absolute;
+}
+
+.middle,
+.blue-team,
+.red-team {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.blue-team {
+    margin-top: 20px;
+}
+
+.red-team {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+.timebox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px 15px 0 0;
+}
+
+.timebox input {
+    height: 100px;
+    width: 100%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.timebox button {
+    width: 100%;
+    margin-top: 5px;
+}

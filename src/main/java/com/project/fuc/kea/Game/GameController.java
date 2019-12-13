@@ -26,8 +26,8 @@ public class GameController {
         }
 
         @GetMapping("/match")
-        public String saveGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
-        {   gameRepo.insertGame(game);
+        public String saveNewGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
+       {   gameRepo.insertGame(game);
             return "newMatch";
         }
 
@@ -38,6 +38,11 @@ public class GameController {
             List<Game> gameList = gameRepo.findAll();
             model.addAttribute("games", gameList);
             return "games-played";
+        }
+        @PostMapping("/savegame")
+        public String saveGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
+        {   gameRepo.insertGame(game);
+            return "landing";
         }
 
 }

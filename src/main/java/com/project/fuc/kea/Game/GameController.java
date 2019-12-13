@@ -17,12 +17,6 @@ public class GameController {
         @Autowired
         private GameRepository gameRepo;
 
-        @GetMapping("/all-games")
-        public String showAll(Model model){
-            List<Game> gameList = gameRepo.findAll();
-            model.addAttribute("games", gameList);
-            return "games-played";
-        }
 
         @GetMapping("/registergame")
         public String addGame(Model m)
@@ -31,24 +25,20 @@ public class GameController {
             return "add-game";
         }
 
-        @PostMapping("/savegame")
+        @GetMapping("/match")
         public String saveGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
         {   gameRepo.insertGame(game);
-            return "landing";
+            return "newMatch";
         }
 
-/*        @GetMapping("/edit-game/{id}")
-        public String editGame(@PathVariable("id") int id, Model model)
-        {
-            Game game  = gameRepo.findGame(id);
-            model.addAttribute("editedGame", game);
-            return "games/edit-game";
+        //could be used for ranking or to see all games
+
+        @GetMapping("/all-games")
+        public String showAll(Model model){
+            List<Game> gameList = gameRepo.findAll();
+            model.addAttribute("games", gameList);
+            return "games-played";
         }
 
-        @PostMapping("/edit-game/save")
-        public String saveEditedGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
-        {
-            return "redirect:/game-saved";
-        }*/
-    }
+}
 

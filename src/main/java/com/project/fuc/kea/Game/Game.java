@@ -6,7 +6,6 @@ public class Game {
     private String winner;
     private String type;
     private int duration;
-    private int points;
 
 
     public Game(){}
@@ -42,11 +41,4 @@ public class Game {
         this.duration = duration;
     }
 
-    public int getPoints() {
-        return points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
-    }
 }

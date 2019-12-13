@@ -56,9 +56,9 @@ public class UserController {
         return "redirect:/users";
     }
 
+
     @RequestMapping(value ={"/login"}, method = RequestMethod.POST)
-    public String userlogin(
-           @RequestParam Map<String,String> reqPar) {
+    public String userlogin(@RequestParam Map<String,String> reqPar) {
         String email=reqPar.get("email");
         String password=reqPar.get("password");
         for (User user : userRepo.findAllUsers()) {
@@ -70,5 +70,11 @@ public class UserController {
         }
         return "redirect:/";
     }
+
+//    @GetMapping(value = {"/{name}"})
+//    public String displayUserPage(@PathVariable(name="name") String name){
+//
+//
+//    }
 
 }

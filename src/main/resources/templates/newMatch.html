@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<script>
+
+    function callRandom(id) {
+        var select=document.getElementById(id);
+        var items=document.getElementsByName("option");
+        var index = Math.floor(Math.random() * items.length);
+        select.value = items[index].value;
+    }
+</script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">F.U.C.</a>
@@ -46,23 +55,23 @@
                     <div class="form-group blue-team">
                         <label>Blue Team:
                             <div class="input-group mb-3">
-                                <select required type="text" class="form-control" name="blue-player1">
-                                    <option value="">Select player...</option>
-                                    <option value="John Doe">John Doe</option>
-                                    <option value="Jane Doe">Jane Doe</option>
+                                <select id="player1" required type="text" class="form-control" name="blue-player1" >
+                                    <option name="option" th:each="user: ${users}"
+                                            th:value="${user.getUserId()}"
+                                            th:text="${user.getName()}"></option>
                                 </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-info"><i class="fas fa-dice"></i></button>
+                                    <button  onclick="callRandom('player1');return false;" class="btn btn-info"><i class="fas fa-dice"></i></button>
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <select type="text" class="form-control" name="blue-player2">
-                                    <option value="">Empty</option>
-                                    <option value="John Doe">John Doe</option>
-                                    <option value="Jane Doe">Jane Doe</option>
+                                <select id="player2" type="text" class="form-control" name="blue-player2">
+                                    <option name="option" th:each="user: ${users}"
+                                            th:value="${user.getUserId()}"
+                                            th:text="${user.getName()}"></option>
                                 </select>
                                 <div class="input-group-append">
-                                    <button class="btn btn-info"><i class="fas fa-dice"></i></button>
+                                    <button onclick="callRandom('player2');return false;" class="btn btn-info"><i class="fas fa-dice"></i></button>
                                 </div>
                             </div>
                         </label>
@@ -91,23 +100,23 @@
                     <div class="form-group red-team">
                             <label>Red Team:
                                 <div class="input-group mb-3">
-                                    <select required type="text" class="form-control" name="red-player1">
-                                        <option value="">Select player...</option>
-                                        <option value="John Doe">John Doe</option>
-                                        <option value="Jane Doe">Jane Doe</option>
+                                    <select id="player3" required type="text" class="form-control" name="red-player1">
+                                        <option name="option" th:each="user: ${users}"
+                                                th:value="${user.getUserId()}"
+                                                th:text="${user.getName()}"></option>
                                     </select>
                                     <div class="input-group-append">
-                                        <button class="btn btn-info"><i class="fas fa-dice"></i></button>
+                                        <button onclick="callRandom('player3');return false;" class="btn btn-info"><i class="fas fa-dice"></i></button>
                                     </div>
                                 </div>
                                 <div class="input-group mb-3">
-                                    <select type="text" class="form-control" name="red-player2">
-                                        <option value="">Empty</option>
-                                        <option value="John Doe">John Doe</option>
-                                        <option value="Jane Doe">Jane Doe</option>
+                                    <select id="player4" type="text" class="form-control" name="red-player2">
+                                        <option name="option" th:each="user: ${users}"
+                                                th:value="${user.getUserId()}"
+                                                th:text="${user.getName()}"></option>
                                     </select>
                                     <div class="input-group-append">
-                                        <button class="btn btn-info"><i class="fas fa-dice"></i></button>
+                                        <button onclick="callRandom('player4');return false;" class="btn btn-info"><i class="fas fa-dice"></i></button>
                                     </div>
                                 </div>
                             </label>

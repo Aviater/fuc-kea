@@ -1,5 +1,6 @@
 package com.project.fuc.kea.Game;
 
+import com.project.fuc.kea.User.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ public class GameController {
 
         @Autowired
         private GameRepository gameRepo;
+        @Autowired
+        private UserRepository userRepo;
 
 
         @GetMapping("/registergame")
@@ -26,8 +29,11 @@ public class GameController {
         }
 
         @GetMapping("/match")
-        public String saveNewGame(@ModelAttribute Game game, @ModelAttribute("a") String type)
-       {   gameRepo.insertGame(game);
+
+        public String saveGame(@ModelAttribute Game game, @ModelAttribute("a") String type, Model model)
+        {
+            //gameRepo.insertGame(game);
+            model.addAttribute("users",userRepo.findAllUsers());
             return "newMatch";
         }
 

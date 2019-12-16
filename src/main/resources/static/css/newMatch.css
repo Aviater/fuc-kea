@@ -40,6 +40,11 @@
     margin-top: 20px;
 }
 
+.score input {
+    width: 50px !important;
+    text-align: center !important;
+}
+
 .red-team {
     position: absolute;
     bottom: 0;

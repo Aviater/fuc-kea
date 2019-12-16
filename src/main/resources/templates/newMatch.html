@@ -54,6 +54,15 @@
                     <!-- Blue team -->
                     <div class="form-group blue-team">
                         <label>Blue Team:
+                            <!-- Score -->
+                            <div class="score input-group mb-3">
+                                <input required type="text" value="0"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-success"><i class="fas fa-plus"></i></button>
+                                    <button class="btn btn-outline-danger"><i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <!-- Player 1 -->
                             <div class="input-group mb-3">
                                 <select id="player1" required type="text" class="form-control" name="blue-player1" >
                                     <option name="option" th:each="user: ${users}"
@@ -64,6 +73,7 @@
                                     <button  onclick="callRandom('player1');return false;" class="btn btn-info"><i class="fas fa-dice"></i></button>
                                 </div>
                             </div>
+                            <!-- Player 2 -->
                             <div class="input-group mb-3">
                                 <select id="player2" type="text" class="form-control" name="blue-player2">
                                     <option name="option" th:each="user: ${users}"
@@ -99,6 +109,15 @@
                     <!-- Red team -->
                     <div class="form-group red-team">
                             <label>Red Team:
+                                <!-- Score -->
+                                <div class="score input-group mb-3">
+                                    <input required type="text" value="0"/>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-success"><i class="fas fa-plus"></i></button>
+                                        <button class="btn btn-outline-danger"><i class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <!-- Player 1 -->
                                 <div class="input-group mb-3">
                                     <select id="player3" required type="text" class="form-control" name="red-player1">
                                         <option name="option" th:each="user: ${users}"
@@ -109,6 +128,7 @@
                                         <button onclick="callRandom('player3');return false;" class="btn btn-info"><i class="fas fa-dice"></i></button>
                                     </div>
                                 </div>
+                                <!-- Player 2 -->
                                 <div class="input-group mb-3">
                                     <select id="player4" type="text" class="form-control" name="red-player2">
                                         <option name="option" th:each="user: ${users}"

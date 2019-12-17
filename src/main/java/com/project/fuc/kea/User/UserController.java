@@ -68,7 +68,7 @@ public class UserController {
                 }
             }
         }
-        return "redirect:/";
+        return "redirect:/about-us";
     }
 
 //    @GetMapping(value = {"/{name}"})

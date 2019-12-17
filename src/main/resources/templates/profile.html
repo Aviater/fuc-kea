@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hello FUC KEA</title>
+
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">F.U.C.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/home">Home</a>
+                <a class="nav-item nav-link active" href="/match">New Match</a>
+                <a class="nav-item nav-link" href="/registergame">After Match</a>
+                <a class="nav-item nav-link" href="#">Leagues</a>
+                <a class="nav-item nav-link" href="#">Ranking</a>
+                <a class="nav-item nav-link" href="/profile">Profile</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="background">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="/img/avatar.jpg" alt="Profile picture"/>
+                <p>Name: <span>John Doe</span></p>
+                <p>Email: <span>john.doe@email.com</span></p>
+                <p>League: <span>Super Duper League</span></p>
+                <div class="currency">
+                    <span>487€</span>
+                </div>
+                <button class="btn btn-info">Deposit</button>
+                <hr/>
+                <div class="friends">
+                    <h3>Friends list</h3>
+                    <hr/>
+                    <p>User 1</p>
+                    <p>User 2</p>
+                    <p>User 3</p>
+                    <p>User 4</p>
+                    <p>User 5</p>
+                    <p>User 6</p>
+                    <p>User 7</p>
+                </div>
+                <button class="btn btn-success">Add new friend</button>
+            </div>
+            <div class="col-sm-4">
+                <h4>Your Match History</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Oponents
+                            </th>
+                            <th>
+                                Score
+                            </th>
+                            <th>
+                                Result
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                John Doe
+                            </td>
+                            <td>
+                                3 - 2
+                            </td>
+                            <td>
+                                Win
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Jane Doe
+                            </td>
+                            <td>
+                                1 - 3
+                            </td>
+                            <td>
+                                Losss
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <h4>Your Betting History</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Players
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                            <th>
+                                Result
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                John Doe, Jane Doe
+                            </td>
+                            <td>
+                                90€
+                            </td>
+                            <td>
+                                Win
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

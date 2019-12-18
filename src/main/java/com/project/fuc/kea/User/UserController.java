@@ -79,5 +79,10 @@ public class UserController {
         return "profile";
     }
 
+    @GetMapping("/ranking")
+    public String showRanking(){
+        return "ranking";
+    }
+
 
 }

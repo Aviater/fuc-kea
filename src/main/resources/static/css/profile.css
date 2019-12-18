@@ -8,16 +8,17 @@ img {
 	margin-bottom: 10px;
 }
 
-button {
-	margin-top: 5px !important;
-	width: 100%;
-}
 
 h4 {
 	text-align: center;
 }
 
 table {
+	width: 100%;
+}
+
+.row button {
+	margin-top: 5px !important;
 	width: 100%;
 }
 

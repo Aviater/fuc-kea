@@ -22,6 +22,12 @@
     margin: 0 auto;
 }
 
+.wrapper a {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
 .wrapper div {
     position: absolute;
     cursor: pointer;

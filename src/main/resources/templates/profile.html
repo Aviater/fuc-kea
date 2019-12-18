@@ -44,7 +44,7 @@
                 <div class="currency">
                     <span>487€</span>
                 </div>
-                <button class="btn btn-info">Deposit</button>
+                <button class="btn btn-info" data-toggle="modal" data-target="#depositModal">Deposit</button>
                 <hr/>
                 <div class="friends">
                     <h3>Friends list</h3>
@@ -57,7 +57,7 @@
                     <p>User 6</p>
                     <p>User 7</p>
                 </div>
-                <button class="btn btn-success">Add new friend</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#friendsModal">Add new friend</button>
             </div>
             <div class="col-sm-4">
                 <h4>Your Match History</h4>
@@ -134,7 +134,58 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Modals -->
+
+    <!-- Deposit money -->
+    <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Deposit Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="deposit">Insert amount:</label>
+                        <input id="deposit" required type="number"/>
+                        <span>€</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" value="Deposit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add friend -->
+    <div class="modal fade" id="friendsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Add Friend</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <label for="deposit">Insert username:</label>
+                        <input id="deposit" required type="number"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" value="Add" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

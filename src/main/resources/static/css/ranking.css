@@ -1,0 +1,20 @@
+table {
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+	border: 1px solid white;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+#background {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    z-index: -1;
+    background-image: url('../img/ranking-background1.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}

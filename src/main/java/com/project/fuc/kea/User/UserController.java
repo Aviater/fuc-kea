@@ -16,8 +16,8 @@ public class UserController {
 
     @GetMapping("/user")
     @ResponseBody
-    public User showUser() {
-        User user = userRepo.findUser(1);
+    public User showUser(int id) {
+        User user = userRepo.findUser(id);
         return user;
     }
 
@@ -56,25 +56,28 @@ public class UserController {
         return "redirect:/users";
     }
 
-
-    @RequestMapping(value ={"/login"}, method = RequestMethod.POST)
-    public String userlogin(@RequestParam Map<String,String> reqPar) {
+    @RequestMapping(value ={"/foosball"}, method = RequestMethod.POST)
+    public String userLogin(@RequestParam Map<String,String> reqPar, Model model) {
         String email=reqPar.get("email");
         String password=reqPar.get("password");
+        String name;
         for (User user : userRepo.findAllUsers()) {
             if (user.getEmail().equals(email)){
                 if(user.getPassword().equals(password)){
+                    name=user.getName();
+                    model.addAttribute("name",name);
                     return "landing";
                 }
             }
         }
-        return "redirect:/about-us";
+        return "redirect:/login";
     }
 
-//    @GetMapping(value = {"/{name}"})
-//    public String displayUserPage(@PathVariable(name="name") String name){
-//
-//
-//    }
+    @GetMapping("/profile")
+    public String showProfile(Model model){
+        //model.addAttribute("user",userRepo.findUser(id));
+        return "profile";
+    }
+
 
 }
